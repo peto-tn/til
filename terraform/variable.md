@@ -4,12 +4,12 @@
 同ディレクトリにvariable.tf 等でtfファイルとして別で作成し、そこに変数の設定を集約させたほうが使い勝手がよい。またdefaultに複数の値を記載できるためIPのまとまったリストなども作成しやすい。
 
 ### Ex.
-``` ファイル構成
+```ファイル構成
 terraform.tf
 variable.tf
 ```
 
-``` variable.tf
+```variable.tf
 variable "region" {
     default = "ap-northeast-1a"
 }
@@ -21,7 +21,7 @@ variable "host_ip" {
 }
 ```
 
-``` terraform.tf
+```terraform.tf
 provider "aws" {
     region = "${var.region}"
 }

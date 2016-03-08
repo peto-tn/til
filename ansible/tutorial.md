@@ -50,4 +50,4 @@ Vagrantfileに以下のように記述する
   end
 ```
 
-上記設定しおけば、vagrant provisionコマンドでもansibleの実行が可能
+上記設定しおけば、vagrant provisionコマンドでもansibleの実行が可能。

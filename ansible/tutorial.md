@@ -28,6 +28,7 @@ defaultで以下のファイルに書かれたホストに対して実行する�
 ### PlayBook
 Chefでいうレシピ。ansible-playbookコマンドであらかじめ定義しておいた処理が実行できる。ansibleコマンドは単一コマンドのみの実行。  
 playbookファイルはymlで記述する
+playbookの実行の際はansible-playbookコマンドを利用する
 - 例:zshのインストール
 ```
 ---

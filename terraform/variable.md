@@ -39,3 +39,27 @@ resource "aws_instance" "web" {
     }
 }
 ```
+
+## 配列について
+variableではstring又はmapのみ対応しておりarrayは作成できない。  
+mapだとキーを指定しないと使用できないため、設定数が複数あって数が変動する場合、
+使用箇所も修正する必要がでてきてしまう。  
+やや力技で、「,」区切りの文字列として定義し、使用側でsplitする方法がある。
+
+```
+# foo.tf
+
+resource "aws_instance" "server" {
+  ...
+  security_groups = "${split(",", var.sec_groups)}"
+}
+
+
+# variables.tf
+
+variable "sec_groups" {
+   default = "sg-xx,sg-x,sg-xxx"
+   description = "The security groups to instantiate the EC2 instance under."
+}
+
+```
